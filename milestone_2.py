@@ -11,7 +11,7 @@ A variable named word to select a random string from word_list
 """
 guess = input("Enter a single letter: ")
 if len(guess) == 1 and guess.isalpha():
- print(guess, "Good Guess")
+  print(guess, "Good Guess")
 else:
  print("Oops!, That is not a valid input.")
  """ 
