@@ -32,7 +32,7 @@ def ask_for_input():
     print(guess, "Good Guess")
    else:
     print("Invalid letter. Please, enter a single alphabetical character.")
-   check_guess(guess)
+    check_guess(guess)
 
 
 
