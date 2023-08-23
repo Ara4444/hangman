@@ -14,7 +14,8 @@ class Hangman():
   word(str): A word chosen at random within word_list
   word_guessed(list): Represents a list of letters of a word and unguessed with underscores.
   num_letters(int): Represents the number of letters that have not been guessed yet.
-  list_og_guessed(list): List of letters that have already been guessed."""
+  list_og_guessed(list): List of letters that have already been guessed.
+  """
  
  def __init__(self,word_list, num_lives = 5):
   """ 

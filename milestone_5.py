@@ -1,11 +1,35 @@
 import random
 
 word_list = ["orange" , "banana" , "apple" , "watermelon" , "grapes"]
-
+""" 
+Created a list containing 5 strings representing different fruits
+"""
 word =  random.choice(word_list)
+""" 
+A variable named word to select a random string from word_list
+"""
 
 class Hangman():
+ """
+ This class is used to represent the Hangman game.
+ 
+ Attributes:
+  word_list(List): Represents a list of words in the form of strings.
+  num_lives(int): Represents the number of lives user has throughout the game, default is 5.
+  word(str): A word chosen at random within word_list
+  word_guessed(list): Represents a list of letters of a word and unguessed with underscores.
+  num_letters(int): Represents the number of letters that have not been guessed yet.
+  list_og_guessed(list): List of letters that have already been guessed.
+  """
+ 
  def __init__(self,word_list, num_lives = 5):
+  """ 
+  Intialize a Hangman game instance.
+  
+  Parameters:
+    word_list(List): Represents a list of words in the form of strings.
+  num_lives(int): Represents the number of lives user has throughout the game, default is 5.
+  """
   self.word_list = word_list
   self.num_lives = num_lives
   self.word = random.choice(word_list)
@@ -30,6 +54,14 @@ class Hangman():
 
 
  def ask_for_input(self):
+  """
+  This function is used to ask the user for the input
+  
+  The function takes in an input and ensures that it is a valid single alphabetical character
+  and also that the guess has not been guessed already if so then the code will print out stating
+  either it is an invalid input or that you have tried the letter otherwise the function will check if 
+  the guess is correct or incorrect and add it to the list of guesses."""
+  
   while True:
    guess = input("Enter a single letter: ")
    if len(guess) != 1 or not guess.isalpha():
@@ -40,8 +72,17 @@ class Hangman():
     self.check_guess(guess)
     self.list_of_guesses.append(guess)
     break
+
     
 def play_game(word_list):
+  """ 
+  A function used to run the Hangman game.
+
+  Parameter:
+   word_list(list): Represents a list of words for the game in the form strings
+   This function starts the game with a list of words and 5 lives as its default. It then enters
+   a loop where the player is asked for guessed, this continues till the user either guessed the 
+   word correctly or loses their lives(5) in which case loses the game too"""
   num_lives = 5
   game = Hangman(word_list, num_lives)
 
