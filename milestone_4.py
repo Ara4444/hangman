@@ -34,13 +34,6 @@ class Hangman():
  
  
  def check_guess(self, guess):
-   """ 
-   A function used to the check if the users guess is correct or not
-   
-   In this function the code checks if the users guess is in the word and then is put into the 
-   word_guessed if correct else it will deduct a life from your num_lives and state that the guess was 
-   incorrect
-   """
    guess = guess.lower()
    if guess in self.word:
     print(f"Good guess! {guess} is in the word.")
