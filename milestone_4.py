@@ -5,7 +5,25 @@ word_list = ["orange" , "banana" , "apple" , "watermelon" , "grapes"]
 word =  random.choice(word_list)
 
 class Hangman():
+ """
+ This class is used to represent the Hangman game.
+ 
+ Attributes:
+  word_list(List): Represents a list of words in the form of strings.
+  num_lives(int): Represents the number of lives user has throughout the game, default is 5.
+  word(str): A word chosen at random within word_list
+  word_guessed(list): Represents a list of letters of a word and unguessed with underscores.
+  num_letters(int): Represents the number of letters that have not been guessed yet.
+  list_og_guessed(list): List of letters that have already been guessed."""
+ 
  def __init__(self,word_list, num_lives = 5):
+  """ 
+  Intialize a Hangman game instance.
+  
+  Parameters:
+    word_list(List): Represents a list of words in the form of strings.
+  num_lives(int): Represents the number of lives user has throughout the game, default is 5.
+  """
   self.word_list = word_list
   self.num_lives = num_lives
   self.word = random.choice(word_list)
@@ -15,7 +33,14 @@ class Hangman():
 
  
  
-  def check_guess(self, guess):
+ def check_guess(self, guess):
+   """ 
+   A function used to the check if the users guess is correct or not
+   
+   In this function the code checks if the users guess is in the word and then is put into the 
+   word_guessed if correct else it will deduct a life from your num_lives and state that the guess was 
+   incorrect
+   """
    guess = guess.lower()
    if guess in self.word:
     print(f"Good guess! {guess} is in the word.")
@@ -30,6 +55,14 @@ class Hangman():
 
 
  def ask_for_input(self):
+  """
+  This function is used to ask the user for the input
+  
+  The function takes in an input and ensures that it is a valid single alphabetical character
+  and also that the guess has not been guessed already if so then the code will print out stating
+  either it is an invalid input or that you have tried the letter otherwise the function will check if 
+  the guess is correct or incorrect and add it to the list of guesses."""
+  
   while True:
    guess = input("Enter a single letter: ")
    if len(guess) != 1 or not guess.isalpha():
