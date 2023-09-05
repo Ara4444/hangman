@@ -1,13 +1,8 @@
 import random
 
 word_list = ["orange" , "banana" , "apple" , "watermelon" , "grapes"]
-""" 
-Created a list containing 5 strings representing different fruits
-"""
+
 word = random.choice(word_list)
-""" 
-A variable named word to select a random string from word_list
-"""
 
 class Hangman:
  """
@@ -40,6 +35,14 @@ class Hangman:
  
  
  def check_guess(self, guess):
+   """ 
+   This function is used to check if the user's guess is within the word selected from word_list, if it is 
+   it will add it the word_guessed if incorrect it will minus a life off of the 5 lives you have and also state 
+   that the letter is not in the word.
+
+   Args: guess: the user's input 
+   """
+  
    guess = guess.lower()
    if guess in self.word:
     print(f"Good guess! {guess} is in the word.")
