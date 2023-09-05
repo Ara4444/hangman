@@ -4,12 +4,12 @@ word_list = ["orange" , "banana" , "apple" , "watermelon" , "grapes"]
 """ 
 Created a list containing 5 strings representing different fruits
 """
-word =  random.choice(word_list)
+word = random.choice(word_list)
 """ 
 A variable named word to select a random string from word_list
 """
 
-class Hangman():
+class Hangman:
  """
  This class is used to represent the Hangman game.
  
@@ -22,7 +22,7 @@ class Hangman():
   list_og_guessed(list): List of letters that have already been guessed.
   """
  
- def __init__(self,word_list, num_lives = 5):
+ def __init__(self, word_list, num_lives=5):
   """ 
   Intialize a Hangman game instance.
   
@@ -32,7 +32,7 @@ class Hangman():
   """
   self.word_list = word_list
   self.num_lives = num_lives
-  self.word = random.choice(word_list)
+  self.word = word
   self.word_guessed = ['_'] * len(self.word)
   self.num_letters = len(set(self.word))
   self.list_of_guesses = []
@@ -83,7 +83,7 @@ def play_game(word_list):
    This function starts the game with a list of words and 5 lives as its default. It then enters
    a loop where the player is asked for guessed, this continues till the user either guessed the 
    word correctly or loses their lives(5) in which case loses the game too"""
-  num_lives = 5
+  num_lives 
   game = Hangman(word_list, num_lives)
 
   while True:
